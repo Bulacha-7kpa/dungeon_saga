@@ -33,5 +33,6 @@ void print_line(const char caracter, int lenght);
 void show_title(int hp, int atk);
 void pause_terminal();
 void datilografar(int time, const char *texto);
+void draw_ascii_file(const char *path, int time);
 
 #endif

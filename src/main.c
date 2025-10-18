@@ -2,6 +2,12 @@
 #include "map.h"
 
 int main() {
+    system("cls");
+    Sleep(2000);
+    draw_ascii_file("./Assets/Images/title.txt", 250);
+    printf("\n\n");
+    draw_ascii_file("./Assets/Images/castle.txt", 250);
+    pause_terminal();
 
     int opc;
     Map *mapa[2];
@@ -17,8 +23,8 @@ int main() {
         fflush(stdin);
 
         draw_map(*mapa[opc]);
-
-        pause_terminal();
+        print_line('=', 60);
+        draw_ascii_file("./Assets/Images/pikachu.txt", 1000);
 
         pause_terminal();
     }

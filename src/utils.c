@@ -46,7 +46,25 @@ void datilografar(int time, const char *texto) {
     return;
 }
 
+void draw_ascii_file(const char *path, int time) {
+    FILE *arq = fopen(path, "r");
+    if (arq == NULL) {
+        print_line('=', MAX_PRINTLINE);
+        printf("No files found.");
+        print_line('=', MAX_PRINTLINE);
+        return;
+    }
 
+    char line[256];
 
+    while (fgets(line, sizeof(line), arq) != NULL) {
+        printf("%s", line);
+        Sleep(time);
+        fflush(stdout);
+    }
+
+    fclose(arq);
+    return;
+}
 
 
