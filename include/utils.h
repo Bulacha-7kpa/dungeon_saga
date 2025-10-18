@@ -21,8 +21,9 @@
 #define CYAN "\x1b[36m"
 #pragma endregion
 
-#define MAX_NAME_GERAL 32 // Tamanho máximo para o nome de qualquer coisa (jogador, item, etc.)
-#define MAX_PRINTLINE  55 // Tamanho máximo para o tamanho do print da função print_line()
+#define MAX_NAME_GERAL 32   // Tamanho máximo para o nome de qualquer coisa (jogador, item, etc.)
+#define MAX_PRINTLINE  100  // Tamanho máximo para o tamanho do print da função print_line()
+#define DELAY_DATI 20     // Tempo padrão pro dalay da função datilografar()
 
 typedef struct Position {
     int x, y;
@@ -31,5 +32,6 @@ typedef struct Position {
 void print_line(const char caracter, int lenght);
 void show_title(int hp, int atk);
 void pause_terminal();
+void datilografar(int time, const char *texto);
 
 #endif

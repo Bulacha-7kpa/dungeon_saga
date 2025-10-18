@@ -27,8 +27,10 @@ Map *build_map(int width, int height) {
 
 void draw_map(Map map) {
     print_line('=', MAX_PRINTLINE);
+    putchar('\n');
 
     for (int i=0; i<map.height; i++) {
+        printf("  ");
         for (int j=0; j<map.width; j++) {
             printf("  %c  ", map.tiles[i][j]);
         }

@@ -10,27 +10,41 @@ void print_line(const char caracter, int lenght) {
 
 void show_title(int hp, int atk) {
     system("cls");
-    print_line('=', MAX_PRINTLINE);                                           //
-    printf(YELLOW "                   Dungeon Saga v1.0                 \n" RESET);
-    printf(RED    "                      By: B7K (PH)                   " RESET);
+
     print_line('=', MAX_PRINTLINE);
+
+    printf(YELLOW "                   D U G E O N   S A G A v1.0                 \n" RESET);
+    printf(RED    "                      By: B7K (PH)                   " RESET);
+
+    print_line('=', MAX_PRINTLINE);
+
     printf("move: WASD | i: inventory | p: pickup | q: quit" RESET);
-    print_line('-', MAX_PRINTLINE);                   //
+    
+    print_line('-', MAX_PRINTLINE);
+
     printf("Player:          HP: %i  |  ATK: %i ~ %i\n        ", hp, atk / 2, atk);
 }
 
 void pause_terminal() {
-    printf("Press ENTER to continue...");
+    printf("\nPress ENTER to continue...");
 
     while (getchar() != '\n');
     
     return;
 }
 
+void datilografar(int time, const char *texto) {
 
+    for (int i=0; texto[i] != '\0'; i++) {
+        putchar(texto[i]);
 
+        fflush(stdout);
 
+        Sleep(time);
+    }
 
+    return;
+}
 
 
 
