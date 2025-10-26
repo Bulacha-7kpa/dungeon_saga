@@ -5,7 +5,7 @@
 
 typedef struct ItemNode {
     char name[MAX_NAME_GERAL];
-    int quant;
+    int quant, damage;
     struct ItemNode *next;
 } ItemNode;
 

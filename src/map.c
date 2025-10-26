@@ -25,17 +25,27 @@ Map *build_map(int width, int height) {
     return map;
 }
 
-void draw_map(Map map) {
-    print_line('=', MAX_PRINTLINE);
+void draw_map(Map map, Player *player) {
+    //print_line('=', MAX_PRINTLINE);
+    draw_border('w', map.width*5);
     putchar('\n');
-
-    for (int i=0; i<map.height; i++) {
-        printf("  ");
-        for (int j=0; j<map.width; j++) {
-            printf("  %c  ", map.tiles[i][j]);
+    for (int y=0; y<map.height; y++) {
+        printf("║");
+        for (int x=0; x<map.width; x++) {
+            if (player->position.x == x && player->position.y == y) {
+                printf(BLUE "  ⚉  " RESET);
+            } else {
+                printf(INVISIBLE "  %c  ", map.tiles[y][x]);
+                printf(RESET);
+            }
         }
-        printf("\n\n");
+        printf("║\n║");
+        for (int i=0; i<map.width*5; i++) {
+            printf(" ");
+        }
+        printf("║\n");
     }
+    draw_border('s', map.width * 5);
 
     print_line('=', MAX_PRINTLINE);
     

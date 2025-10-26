@@ -2,6 +2,7 @@
 #define MAP_H
 
 #include "utils.h"
+#include "player.h"
 
 typedef struct Map {
     int width, height;
@@ -10,6 +11,6 @@ typedef struct Map {
 
 
 Map *build_map(int width, int height);
-void draw_map(Map map);
+void draw_map(Map map, Player *player);
 
 #endif
